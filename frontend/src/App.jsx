@@ -4,7 +4,7 @@ import LandingPage from "./pages/Landing/LandingPage";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import HomePage from "./pages/Home/HomePage";
-import DashboardPage from "./pages/DashBoard/DashBoardPage";
+import DashboardPage from "./pages/Dashboard/DashboardPage";
 import AiAdvisorPage from "./pages/AiAdvisor/AiAdvisorPage";
 import InvestmentExplorer from "./pages/Investments/InvestmentExplorer";
 import ProfilePage from "./pages/Profile/ProfilePage";
