@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getMarketSummary = async () => {
   const response = await axios.get(
-    "http://localhost:5000/api/market/summary"
+    `${import.meta.env.VITE_API_URL}/api/market/summary`
   );
   return response.data;
 };

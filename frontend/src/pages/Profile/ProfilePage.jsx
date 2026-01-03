@@ -71,7 +71,7 @@ export default function ProfilePage() {
           <div className="profile-avatar">
             {user?.avatar ? (
               <img
-                src={`http://localhost:5000${user.avatar}`}
+                src={`${import.meta.env.VITE_API_URL}${user.avatar}`}
                 alt="avatar"
                 className="profile-avatar-img"
               />
