@@ -59,7 +59,7 @@ const Counter = () => {
           Impact That <span>Builds Confidence</span>
         </h2>
         <p>
-          FinGold empowers students and professionals with AI-driven insights,
+          DhanEase empowers students and professionals with AI-driven insights,
           real-time monitoring, and goal-focused financial clarity.
         </p>
       </div>
@@ -79,7 +79,7 @@ const Counter = () => {
 
       {/* ENGAGEMENT FEATURES */}
       <div className="counter-engage">
-        <h4>Why users trust FinGold</h4>
+        <h4>Why users trust DhanEase</h4>
 
         <div className="engage-grid">
           <div className="engage-item">AI-powered insights, not assumptions</div>

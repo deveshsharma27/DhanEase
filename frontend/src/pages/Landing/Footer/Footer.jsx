@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* BRAND */}
         <div className="footer-brand">
-          <h3 className="footer-logo">FinGold</h3>
+          <h3 className="footer-logo">DhanEase</h3>
           <p>
             Smart, secure, and AI-powered financial guidance designed for
             students and early professionals.
@@ -49,7 +49,7 @@ const Footer = () => {
 
       {/* BOTTOM */}
       <div className="footer-bottom">
-        © {new Date().getFullYear()} FinGold. All rights reserved.
+        © {new Date().getFullYear()} DhanEase. All rights reserved.
       </div>
     </footer>
   );

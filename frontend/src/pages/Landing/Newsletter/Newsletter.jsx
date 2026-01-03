@@ -11,7 +11,7 @@ const Newsletter = () => {
       {/* CONTENT */}
       <div className="newsletter-box">
         <h2>
-          Stay Ahead with <span>FinGold</span>
+          Stay Ahead with <span>DhanEase</span>
         </h2>
 
         <p>

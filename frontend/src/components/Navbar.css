@@ -59,7 +59,6 @@
   transition: color 0.25s ease, text-shadow 0.25s ease;
 }
 
-/* Hover = premium gold glow */
 .nav-link:hover {
   color: #f5d76e;
   text-shadow:
@@ -119,43 +118,59 @@
   user-select: none;
 }
 
-@media (max-width: 992px) {
+.nav-hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #f5d76e;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
   .nav {
-    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
   }
 
   .nav-center {
-    gap: 28px;
+    display: none;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 0 0 auto;   
+  }
+
+  .nav-hamburger {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .nav-brand {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-right {
+    flex-shrink: 0;
   }
 }
 
 @media (max-width: 768px) {
-  .nav {
-    grid-template-columns: auto auto;
-  }
-
-  .nav-center {
-    display: none; 
-  }
-
-  .nav-right {
-    gap: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav {
-    height: 60px;
-    padding: 0 16px;
-  }
-
-  .nav-avatar {
-    width: 30px;
-    height: 30px;
-    font-size: 13px;
-  }
-
   .nav-logout {
-    display: none; 
+    display: none;
+  }
+
+  .nav-brand {
+    font-size: 18px;
   }
 }

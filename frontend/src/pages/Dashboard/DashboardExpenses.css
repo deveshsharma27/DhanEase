@@ -137,3 +137,21 @@
   text-transform: capitalize;
 }
 
+/* === RESPONSIVE (same pattern as goals page) === */
+@media (max-width: 900px) {
+  .expenses-form {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-item {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-meta {
+    text-align: left;
+  }
+
+  .expense-actions {
+    justify-content: flex-start;
+  }
+}

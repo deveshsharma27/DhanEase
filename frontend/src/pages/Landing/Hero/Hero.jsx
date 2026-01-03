@@ -42,7 +42,7 @@ const [authLoading, setAuthLoading] = useState(true);
       <header className={`landing-header ${hideHeader ? "hide" : ""}`}>
         <div className="landing-header-inner">
           <div className="brand-name" onClick={() => window.scrollTo(0, 0)}>
-            FinGold
+            DhanEase
           </div>
 
           <nav className="desktop-menu">

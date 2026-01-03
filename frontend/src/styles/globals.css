@@ -47,7 +47,7 @@ a {
   align-items: center;
   padding: 14px 20px;
   background: transparent;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 10;
 } */
@@ -96,9 +96,29 @@ a {
 .content {
   flex: 1;
   background: transparent;
-  margin-left: 190px;
-  padding: 55px;
+  /* margin-left: 240px;
+  padding-top: 60px; */
 }
+
+/* Desktop */
+.content {
+  margin-left: 240px;
+  padding-top: 68px; /* navbar height */
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin-left: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+  }
+}
+
 .landing {
   padding: 60px 40px;
 }
@@ -274,17 +294,4 @@ a {
   align-items: center;
   justify-content: center;
   height: 60vh;
-}
-
-/*responsive*/
-
-@media (max-width: 768px) {
-  .main-area {
-    display: block;
-  }
-
-  .content {
-    margin-left: 0;
-    padding-top: 68px;
-  }
 }

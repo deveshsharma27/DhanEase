@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 import {
@@ -12,67 +12,93 @@ import {
   User
 } from "lucide-react";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
+  const location = useLocation();
+  const tab = new URLSearchParams(location.search).get("tab");
+
+  const isDashboard = location.pathname === "/dashboard";
+
   return (
-    <aside className="sidebar">
-      <nav className="sidebar-nav">
+    <>
+      {/* Overlay */}
+      <div
+        className={`sidebar-overlay ${isOpen ? "show" : ""}`}
+        onClick={onClose}
+      />
 
-        <NavLink
-          to="/dashboard"
-          className={({ isActive }) =>
-            isActive ? "side-link active" : "side-link"
-          }
-        >
-          <LayoutDashboard size={18} />
-          <span>Overview</span>
-        </NavLink>
+      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+        <nav className="sidebar-nav">
 
-        <NavLink
-          to="/dashboard?tab=expenses"
-          className={({ isActive }) =>
-            isActive ? "side-link active" : "side-link"
-          }
-        >
-          <Wallet size={18} />
-          <span>Expenses</span>
-        </NavLink>
+          {/* OVERVIEW */}
+          <Link
+            to="/dashboard"
+            className={`side-link ${isDashboard && !tab ? "active" : ""}`}
+          >
+            <LayoutDashboard size={18} />
+            <span>Overview</span>
+          </Link>
 
-        <NavLink
-          to="/dashboard?tab=goals"
-          className={({ isActive }) =>
-            isActive ? "side-link active" : "side-link"
-          }
-        >
-          <Target size={18} />
-          <span>Goals</span>
-        </NavLink>
+          {/* EXPENSES */}
+          <Link
+            to="/dashboard?tab=expenses"
+            className={`side-link ${tab === "expenses" ? "active" : ""}`}
+          >
+            <Wallet size={18} />
+            <span>Expenses</span>
+          </Link>
 
-        <NavLink
-          to="/dashboard?tab=reports"
-          className={({ isActive }) =>
-            isActive ? "side-link active" : "side-link"
-          }
-        >
-          <BarChart3 size={18} />
-          <span>Reports</span>
-        </NavLink>
+          {/* GOALS */}
+          <Link
+            to="/dashboard?tab=goals"
+            className={`side-link ${tab === "goals" ? "active" : ""}`}
+          >
+            <Target size={18} />
+            <span>Goals</span>
+          </Link>
 
-        <NavLink to="/ai-advisor" className="side-link">
-          <Sparkles size={18} />
-          <span>AI Advisor</span>
-        </NavLink>
+          {/* REPORTS */}
+          <Link
+            to="/dashboard?tab=reports"
+            className={`side-link ${tab === "reports" ? "active" : ""}`}
+          >
+            <BarChart3 size={18} />
+            <span>Reports</span>
+          </Link>
 
-        <NavLink to="/investments" className="side-link">
-          <TrendingUp size={18} />
-          <span>Investments</span>
-        </NavLink>
+          {/* REAL ROUTES BELOW — NavLink IS CORRECT HERE */}
 
-        <NavLink to="/profile" className="side-link">
-          <User size={18} />
-          <span>Profile</span>
-        </NavLink>
+          <NavLink
+            to="/ai-advisor"
+            className={({ isActive }) =>
+              `side-link ${isActive ? "active" : ""}`
+            }
+          >
+            <Sparkles size={18} />
+            <span>AI Advisor</span>
+          </NavLink>
 
-      </nav>
-    </aside>
+          <NavLink
+            to="/investments"
+            className={({ isActive }) =>
+              `side-link ${isActive ? "active" : ""}`
+            }
+          >
+            <TrendingUp size={18} />
+            <span>Investments</span>
+          </NavLink>
+
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              `side-link ${isActive ? "active" : ""}`
+            }
+          >
+            <User size={18} />
+            <span>Profile</span>
+          </NavLink>
+
+        </nav>
+      </aside>
+    </>
   );
 }
