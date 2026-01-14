@@ -1,7 +1,7 @@
 ![React](https://img.shields.io/badge/Frontend-React-blue)
 ![Node](https://img.shields.io/badge/Backend-Node.js-green)
 ![MongoDB](https://img.shields.io/badge/Database-MongoDB-darkgreen)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+
 
 ## 🧭 System Flow
 
